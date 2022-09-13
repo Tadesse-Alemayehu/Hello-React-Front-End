@@ -7,7 +7,9 @@ export default function Greeting() {
   const greeting = useSelector((state) => state.Greeting);
   return (
     <div>
-      {greeting}
+      <h1>{greeting}</h1>
+      <br />
+      <br />
       <button onClick={() => dispatch(generateGreeting())} type="button">
         Click here to greet
       </button>
