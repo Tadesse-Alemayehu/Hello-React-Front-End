@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import Greeting from './components/greeting';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './Redux/store';
@@ -14,8 +13,7 @@ root.render(
     <BrowserRouter>
       <Provider store={store}>
         <Routes>
-          <Route path="/greeting" element={<Greeting />} />
-          <Route path="/" element={<App />} />
+          <Route path="/*" element={<App />} />
         </Routes>
       </Provider>
     </BrowserRouter>
