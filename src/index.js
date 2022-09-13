@@ -5,14 +5,18 @@ import Greeting from "./components/greeting";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "./Redux/store";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Routes>
-        <Route path="/greeting" element={<Greeting />} />
-        <Route path="/" element={<App />} />
-      </Routes>
+      <Provider store={store}>
+        <Routes>
+          <Route path="/greeting" element={<Greeting />} />
+          <Route path="/" element={<App />} />
+        </Routes>
+      </Provider>
     </BrowserRouter>
   </React.StrictMode>
 );
