@@ -1,5 +1,5 @@
-import greetingReducer from "./Greeting/greeting";
-import { combineReducers } from "redux";
+import { combineReducers } from 'redux';
+import greetingReducer from './Greeting/greeting';
 
 const rootReducer = combineReducers({
   Greeting: greetingReducer,

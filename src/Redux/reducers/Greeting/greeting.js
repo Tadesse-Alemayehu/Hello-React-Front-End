@@ -1,23 +1,21 @@
-const RANDOM_GREET_ACTION = "Greeting/greeting/RANDOM_GREET_ACTION";
+const RANDOM_GREET_ACTION = 'Greeting/greeting/RANDOM_GREET_ACTION';
 
 export const generateGreeting = () => (dispatch) => {
-  var myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
-  myHeaders.append("Accept", "application/json");
-  fetch("http://localhost:4000/greeting", {
-    method: "GET",
+  const myHeaders = new Headers();
+  myHeaders.append('Content-Type', 'application/json');
+  myHeaders.append('Accept', 'application/json');
+  fetch('http://localhost:4000/greeting', {
+    method: 'GET',
     headers: myHeaders,
-    redirect: "follow",
+    redirect: 'follow',
   })
     .then((response) => response.json())
-    .then((data) =>
-      dispatch({ type: RANDOM_GREET_ACTION, payload: data.greeting })
-    );
+    .then((data) => dispatch({ type: RANDOM_GREET_ACTION, payload: data.greeting }));
 };
 
 export default function greetingReducer(
-  state = "No greeting is available",
-  action
+  state = 'No greeting is available',
+  action,
 ) {
   switch (action.type) {
     case RANDOM_GREET_ACTION:
